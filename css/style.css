@@ -1,0 +1,220 @@
+/* Custom CSS para página personal de Reed Richards */
+
+/* Variables CSS */
+:root {
+    --primary: #3B82F6;
+    --secondary: #10B981;
+    --dark: #1F2937;
+    --light: #F9FAFB;
+    --transition: all 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation styles */
+.nav-link {
+    @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-300;
+}
+
+.nav-link.active {
+    @apply text-primary;
+}
+
+.mobile-nav-link {
+    @apply block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300;
+}
+
+/* Button styles */
+.btn-primary {
+    @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-secondary {
+    @apply inline-flex items-center px-6 py-3 border-2 border-primary text-base font-medium rounded-lg text-primary bg-transparent hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300;
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Experience cards */
+.experience-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105;
+}
+
+/* Tech tags */
+.tech-tag {
+    @apply inline-block px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full;
+}
+
+/* Skills section */
+.skill-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 text-center;
+}
+
+.skill-icon {
+    @apply w-16 h-16 mx-auto mb-4 flex items-center justify-center text-3xl;
+}
+
+.skill-badge {
+    @apply inline-block px-3 py-1 text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full mr-2 mb-2;
+}
+
+/* Portfolio section */
+.filter-btn {
+    @apply px-4 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300;
+}
+
+.filter-btn.active {
+    @apply bg-primary text-white;
+}
+
+.portfolio-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105;
+}
+
+.portfolio-image {
+    @apply relative overflow-hidden;
+}
+
+.portfolio-overlay {
+    @apply absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300;
+}
+
+.portfolio-link {
+    @apply w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-gray-100 transition-colors duration-300;
+}
+
+.project-tag {
+    @apply inline-block px-3 py-1 text-xs font-medium bg-secondary/10 text-secondary rounded-full mr-2 mb-2;
+}
+
+/* Events section */
+.event-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl;
+}
+
+.event-date {
+    @apply text-center p-4 bg-primary/10 rounded-lg;
+}
+
+.event-tag {
+    @apply inline-block px-3 py-1 text-xs font-medium bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full mr-2 mb-2;
+}
+
+/* Blog section */
+.blog-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105;
+}
+
+.blog-image {
+    @apply relative overflow-hidden;
+}
+
+/* Contact form */
+#contact-form input,
+#contact-form textarea {
+    @apply transition-all duration-300;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    @apply ring-2 ring-primary border-transparent;
+}
+
+.error-message {
+    @apply text-sm text-red-500 mt-1;
+}
+
+.error-message.show {
+    @apply block;
+}
+
+/* Social links */
+.social-link {
+    @apply w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-110;
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .fade-in {
+        transform: translateY(20px);
+    }
+    
+    .portfolio-card:hover,
+    .skill-card:hover,
+    .blog-card:hover {
+        transform: none;
+    }
+}
+
+/* Dark mode specific adjustments */
+@media (prefers-color-scheme: dark) {
+    .portfolio-overlay {
+        @apply bg-gray-900 bg-opacity-70;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    
+    .page-break {
+        page-break-before: always;
+    }
+}
